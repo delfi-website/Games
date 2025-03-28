@@ -5,8 +5,7 @@ function App() {
 
     return (
         <div>
-            <h1>My Games</h1>
-
+            <h1>My Games: </h1>
             <Memory/>
             </div>
     );

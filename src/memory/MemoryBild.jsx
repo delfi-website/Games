@@ -41,38 +41,38 @@ export default function MemoryBild({ bildState, resetState }) {
         if (isLocked) {
             switch (lockedBildState) {
                 case 0:
-                    return <img src={questionmark} height="200" width="200" alt="questionmark"/>;
+                    return <img src={questionmark} height="200" width="200" alt="questionmark" />;
                 case 1:
-                    return <img src={stadler_kiss} height="200" width="200" alt="kiss"/>;
+                    return <img src={stadler_kiss} height="189" width="252" alt="kiss" />;
                 case 2:
-                    return <img src={stadler_flirt} height="200" width="200" alt="flirt"/>;
+                    return <img src={stadler_flirt} height="189" width="252" alt="flirt" />;
                 case 3:
-                    return <img src={stadler_smile} height="200" width="200" alt="smile"/>;
+                    return <img src={stadler_smile} height="189" width="252" alt="smile" />;
                 case 4:
-                    return <img src={icn} height="200" width="200" alt="icn"/>;
+                    return <img src={icn} height="189" width="252" alt="icn" />;
                 case 5:
-                    return <img src={lok2000} height="200" width="200" alt="lok2000"/>;
+                    return <img src={lok2000} height="189" width="252" alt="lok2000" />;
                 case 6:
-                    return <img src={re420} height="200" width="200" alt="re420"/>;
+                    return <img src={re420} height="189" width="252" alt="re420" />;
                 default:
                     return null;
             }
         } else {
             switch (publicBildState) {
                 case 0:
-                    return <img src={questionmark} height="200" width="200" alt="questionmark"/>;
+                    return <img src={questionmark} height="200" width="200" alt="questionmark" />;
                 case 1:
-                    return <img src={stadler_kiss} height="200" width="200" alt="kiss"/>;
+                    return <img src={stadler_kiss} height="189" width="252" alt="kiss" />;
                 case 2:
-                    return <img src={stadler_flirt} height="200" width="200" alt="flirt"/>;
+                    return <img src={stadler_flirt} height="189" width="252" alt="flirt" />;
                 case 3:
-                    return <img src={stadler_smile} height="200" width="200" alt="smile"/>;
+                    return <img src={stadler_smile} height="189" width="252" alt="smile" />;
                 case 4:
-                    return <img src={icn} height="200" width="200" alt="icn"/>;
+                    return <img src={icn} height="189" width="252" alt="icn" />;
                 case 5:
-                    return <img src={lok2000} height="200" width="200" alt="lok2000"/>;
+                    return <img src={lok2000} height="189" width="252" alt="lok2000" />;
                 case 6:
-                    return <img src={re420} height="200" width="200" alt="re420"/>;
+                    return <img src={re420} height="189" width="252" alt="re420" />;
                 default:
                     return null;
             }
@@ -84,7 +84,7 @@ export default function MemoryBild({ bildState, resetState }) {
             <p>{renderImage()}</p>
             <input type="button" value="Show Picture" onClick={showPicture} />
             <input type="button" value="Hide Picture" onClick={unshowPicture} />
-            <input type="button" value="Lock picture" onClick={lockPicture}/>
+            <input type="button" value="Lock picture" onClick={lockPicture} />
         </div>
     );
 }

@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 function Memory() {
     const [pictures, setPictures] = useState([]);
     const [resetState, setResetState] = useState(false);
-    const [lock, setLock] = useState(false);
 
     useEffect(() => {
         const images = [1, 2, 3, 4, 5, 6];
@@ -23,12 +22,12 @@ function Memory() {
         }
         return shuffledArray;
     }
-    function resetAll()  {
-        randomisePictures()
-        hideAllPictures()
-        setLock(false)
 
+    function resetAll() {
+        randomisePictures();
+        hideAllPictures();
     }
+
     function randomisePictures() {
         const images = [1, 2, 3, 4, 5, 6];
         const doubleImages = [...images, ...images];
@@ -53,7 +52,6 @@ function Memory() {
                         key={index}
                         bildState={random}
                         resetState={resetState}
-                        lock={lock}
                     />
                 ))}
                 <MemoryNavBar

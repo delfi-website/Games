@@ -1,4 +1,4 @@
-#Games
+# Games
 
 A collection of small games written in React.
 

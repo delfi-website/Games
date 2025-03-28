@@ -1,6 +1,7 @@
 {
   "name": "games",
   "homepage": "https://delfi-website.github.io/Games/",
+
   "private": false,
   "version": "0.1",
   "type": "module",

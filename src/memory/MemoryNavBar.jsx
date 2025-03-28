@@ -1,6 +1,6 @@
 import "../App.css";
 
-export default function MemoryNavBar({callback}) {
+export default function MemoryNavBar({ callback }) {
     return (
         <div className="navbar">
             <p>Memory</p>

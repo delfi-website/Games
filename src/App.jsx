@@ -1,23 +1,66 @@
 import './App.css';
 import MemoryBild from './memory/MemoryBild.jsx';
 import MemoryNavBar from "./memory/MemoryNavBar.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-    const [random, setRandom] = useState(1);
+    const [pictures, setPictures] = useState([]);
+    const [resetState, setResetState] = useState(false);
+    const [lock, setLock] = useState(false);
 
-    function randomisePicture() {
-        setRandom(Math.floor(Math.random() * 6) + 1);
+    useEffect(() => {
+        const images = [1, 2, 3, 4, 5, 6];
+        const doubleImages = [...images, ...images];
+        const shuffledImages = shuffleArray(doubleImages);
+        setPictures(shuffledImages);
+    }, []);
+
+    function shuffleArray(array) {
+        const shuffledArray = [...array];
+        for (let i = shuffledArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+        }
+        return shuffledArray;
+    }
+    function resetAll()  {
+        randomisePictures()
+        hideAllPictures()
+        setLock(false)
+
+    }
+    function randomisePictures() {
+        const images = [1, 2, 3, 4, 5, 6];
+        const doubleImages = [...images, ...images];
+        const shuffledImages = shuffleArray(doubleImages);
+        setPictures(shuffledImages);
+    }
+
+    function hideAllPictures() {
+        setResetState(true);
+        setTimeout(() => setResetState(false), 500);
     }
 
     return (
         <div>
-            <h1 className="filler">filler</h1>
+            <h1 className="filler">Filler</h1>
+            <h1 className="filler">Filler</h1>
+            <h1 className="filler">Filler</h1>
+            <h1 className="filler">Filler</h1>
             <div className="flex-container">
-                {Array(12).fill().map((_, index) => (
-                    <MemoryBild key={index} bildState={random} />
+                {pictures.map((random, index) => (
+                    <MemoryBild
+                        key={index}
+                        bildState={random}
+                        resetState={resetState}
+                        lock={lock}
+                    />
                 ))}
-                <MemoryNavBar callback={randomisePicture} />
+                <MemoryNavBar
+                    callback={randomisePictures}
+                    callback2={hideAllPictures}
+                    callback3={resetAll}
+                />
             </div>
         </div>
     );

@@ -6,7 +6,7 @@ import stadler_smile from "../assets/giruno.png";
 import lok2000 from "../assets/lok2000.png";
 import icn from "../assets/icn.png";
 import re420 from "../assets/re420.png";
-import "../App.css";
+import "./Memory.css";
 
 export default function MemoryBild({ bildState, resetState }) {
     const [publicBildState, setPublicBildState] = useState(0);

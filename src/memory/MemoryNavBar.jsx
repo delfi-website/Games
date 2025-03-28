@@ -1,4 +1,4 @@
-import "../App.css";
+import "./Memory.css";
 import { useState } from "react";
 
 export default function MemoryNavBar({ callback, callback2, callback3 }) {
